@@ -16,3 +16,4 @@ class ParkingDetails(db.Model):
     pincode = db.Column(db.Integer, nullable=False)
     price = db.Column(db.String(50), nullable=False)
     maxspots = db.Column(db.Integer, nullable=False)
+    occupied = db.Column(db.Integer, default=0)

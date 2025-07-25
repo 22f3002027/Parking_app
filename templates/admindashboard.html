@@ -90,34 +90,33 @@
 
 <div class="card-container">
     <div class="card-wrap">
-      <form>
-      <!-- Repeat this card div to add more cards -->
+      {% for details in parkingdetails %}
       <div class="parking-card">
         <div class="card text-center">
           <div class="card-header">
-            <h5 class="card-title">Parking #1</h5>
+            <h5 class="card-title">{{ details.primeloc }}</h5>
             <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-              <a href="/admindashboard/editParking" class="btn btn-primary me-md-2" style="background-color: green;">Edit</a>
+              <a href="/admindashboard/editParking/{{details.id}}" class="btn btn-primary me-md-2" style="background-color: green;">Edit</a>
               <button class="btn btn-primary" style="background-color: red;">Delete</button>
             </div>
-            <p class="card-text mt-2" style="color: green;">(Occupied: 3/15)</p>
+            <p class="card-text mt-2" style="color: green;">(Occupied: {{details.occupied}}/{{details.maxspots}})</p>
           </div>
+          {%set avail = details.maxspots - details.occupied%}
           <div class="card-body">
+            {% for i in range(avail) %}
             <a href="/admindashboard/viewDelSpot" class="btn btn-success btn-circle m-1">A</a>
+            {% endfor %}
+            {% for i in range(details.occupied) %}
             <a href="/admindashboard/viewDelSpot" class="btn btn-danger btn-circle m-1">O</a>
-            <button class="btn btn-success btn-circle m-1">A</button>
-            <button class="btn btn-danger btn-circle m-1">O</button>
-            <button class="btn btn-success btn-circle m-1">A</button>
-            <button class="btn btn-danger btn-circle m-1">O</button>
-            <button class="btn btn-success btn-circle m-1">A</button>
-            <button class="btn btn-danger btn-circle m-1">O</button>
+            {% endfor %}
           </div>
+          
           <div class="card-footer text-muted"></div>
         </div>
       </div>
-
+      {% endfor %}
       <!-- Duplicate the .parking-card div above to add more cards -->
-      </form>
+      
     </div>
   </div>
 </body>

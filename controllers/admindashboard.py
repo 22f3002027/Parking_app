@@ -5,5 +5,6 @@ admin_dashboard = Blueprint('admindashboard', __name__)
 
 @admin_dashboard.route('/admindashboard', methods=['GET','POST'])
 def admindashboard():
-
-    return render_template('admindashboard.html')
+    
+    parkingdetails = ParkingDetails.query.all()
+    return render_template('admindashboard.html',parkingdetails=parkingdetails)
