@@ -9,7 +9,7 @@
 <body>
     <div style="background-image: url('./../static/car\ background.webp'); background-size: cover; background-position: center;background-color:#FAF7F3; align-items: center; display: flex; justify-content: center; height: 100vh;">
         <div style="width: 40%; padding: 20px; background-color: #b4dee7; border-radius: 10px;">
-            <h3 class="card text-center" style="background-color: #BDDDE4; border: none;"><b>User Login</b></h3>
+            <h3 class="card text-center" style="background-color: #b4dee7; border: none;"><b>User Login</b></h3>
             <form action="/login" method="post">
                 <div>
                     <lable for="email" class="form-lable">Email ID</lable>
@@ -19,12 +19,15 @@
                     <lable for="password" class="form-lable">Password</lable>
                     <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
                 </div>
-                <button class="btn btn-primary" type="submit" style="margin-top: 10px; margin-bottom: 5px;">Login</button>
-                <div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                    <button class="btn btn-primary" type="submit" style="margin-top: 10px; margin-bottom: 5px; width: 40%;">Login</button>
+                </div>            
+                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
                     <a href="/signup">sign up</a>
                 </div>
             </form>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
 </html>

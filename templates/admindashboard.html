@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <style>
+      body {
+      margin: 0;
+      background-color: #b4dee7;
+      border-radius: 10px;
+    }
+
+      .card-container {
+      background-image: url('./../static/car background.webp');
+      background-size: cover;
+      background-position: center;
+      background-color: #FAF7F3;
+      min-height: 100vh;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .card-wrap {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .parking-card {
+      background-color: #b4dee7;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .card {
+      min-height: 250px;
+    }
+    .btn-circle {
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      padding: 6px;
+    }
+    </style>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="padding: 0px; height: 50px;" >
+  <div class="container-fluid" style="background-color: #FFFBDE;">
+    <a class="navbar-brand" href="#">Welcome Bhavya!</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="users.html">Users</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="search.html">Search</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="summary.html">Summary</a>
+        </li>
+      </ul>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #b4dee7; border: none; color: black;"> Profile </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Edit</a></li>
+          <li><a class="dropdown-item" href="#">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-2 d-flex justify-content-between align-items-center" style="padding-bottom: 5px;">
+  <h2 style="font-weight: bold;">Parking Lot</h2>
+  <a class="btn btn-primary" href="/admindashboard/newParking">Add</a>
+</div>
+
+<div class="card-container">
+    <div class="card-wrap">
+      <form>
+      <!-- Repeat this card div to add more cards -->
+      <div class="parking-card">
+        <div class="card text-center">
+          <div class="card-header">
+            <h5 class="card-title">Parking #1</h5>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+              <a href="/admindashboard/editParking" class="btn btn-primary me-md-2" style="background-color: green;">Edit</a>
+              <button class="btn btn-primary" style="background-color: red;">Delete</button>
+            </div>
+            <p class="card-text mt-2" style="color: green;">(Occupied: 3/15)</p>
+          </div>
+          <div class="card-body">
+            <a href="/admindashboard/viewDelSpot" class="btn btn-success btn-circle m-1">A</a>
+            <a href="/admindashboard/viewDelSpot" class="btn btn-danger btn-circle m-1">O</a>
+            <button class="btn btn-success btn-circle m-1">A</button>
+            <button class="btn btn-danger btn-circle m-1">O</button>
+            <button class="btn btn-success btn-circle m-1">A</button>
+            <button class="btn btn-danger btn-circle m-1">O</button>
+            <button class="btn btn-success btn-circle m-1">A</button>
+            <button class="btn btn-danger btn-circle m-1">O</button>
+          </div>
+          <div class="card-footer text-muted"></div>
+        </div>
+      </div>
+
+      <!-- Duplicate the .parking-card div above to add more cards -->
+      </form>
+    </div>
+  </div>
+</body>
+</html>
